@@ -28,7 +28,7 @@ jobs:
           mvn clean compile package -DskipTests --no-transfer-progress -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%i:%s')"
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%I:%S')"
       - name: Create release ${{ steps.vars.outputs.tag }}
         id: create-release
         uses: ncipollo/release-action@v1
