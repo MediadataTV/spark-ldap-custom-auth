@@ -13,8 +13,8 @@ jobs:
     name: Build Spark Ldap Custom Auth
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Set output
-        uses: actions/checkout@v2
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Set up JDK
