@@ -25,7 +25,7 @@ jobs:
           cache: 'maven'
       - name: Build Spark Ldap Auth ${{ steps.vars.outputs.tag }}
         run: |
-          mvn clean compile package assembly:assembly -DskipTests --no-transfer-progress -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+          mvn clean compile package -DskipTests --no-transfer-progress -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%i:%s')"
